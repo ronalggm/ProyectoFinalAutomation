@@ -37,9 +37,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-//cucumberReports{
-   // outputDir = file('report')
-    //buildId = '0'
-   // reports = file(json/reportFeature.json)
-//}

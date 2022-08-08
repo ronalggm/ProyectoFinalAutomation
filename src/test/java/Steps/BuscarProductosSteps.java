@@ -88,16 +88,11 @@ public class BuscarProductosSteps {
             System.out.println("Agrado al carrito: " + data.get(contador).get("Productos"));
             if (mainMenu.isDisplayed("(//img[@title='" + data.get(contador).get("Productos") + "'])[1]")) {
                 Thread.sleep(2000);
-                //  mainMenu.clickAndHold("(//img[@title='" + data.get(contador).get("Productos") + "'])[1]");
 
                 mainMenu.clickAndHold("(//span[contains(text(),'Add to cart')])["+indexAddButton+"]");
-             //   mainMenu.switchToProduct(0);
+
                 Thread.sleep(2000);
-              //  mainMenu.clickAndHold(addToCart);
-                Thread.sleep(2000);
-              //  mainMenu.switchToParentFrame();
                 mainMenu.clicEnBoton(continueTOshopping);
-                //   mainMenu.goBack();
                 contador++;
                 indexAddButton++;
             }
