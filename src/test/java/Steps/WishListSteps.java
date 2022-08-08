@@ -48,7 +48,7 @@ public class WishListSteps {
     @Then("Valido que la cantidad sea la correcta \\({int} productos)")
     public void validoQueLaCantidadSeaLaCorrectaProductos(int cantidad) {
         int resultado = Integer.parseInt(myLists.obtenerTexto(QuantityOfProducts));
-        Assert.assertEquals("La cantidad no coincide con la esperada", resultado, cantidad);
+        Assert.assertEquals("La cantidad no coincide con la esperada", cantidad, resultado);
     }
 
     @And("Valido que los nombres de los productos sean los correctos")

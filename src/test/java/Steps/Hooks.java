@@ -16,16 +16,6 @@ public class Hooks extends BasePage {
 
     MainMenu main = new MainMenu();
 
-    @After("@First")
-    public void firstCp() {
-        //   driver.navigate().refresh();
-    }
-
-    @Before("@Search")
-    public void cpSearchProductsBefore() {
-
-    }
-
     @Before("@Checkout")
     public void cpCheckoutBefore() throws InterruptedException {
         Thread.sleep(3000);
@@ -36,12 +26,17 @@ public class Hooks extends BasePage {
 
     @Before("@PersonalInfo")
     public void cpPersonalInfo() throws InterruptedException {
-     Thread.sleep(2000);
-        main.clicEnSignOut();
-        Thread.sleep(2000);
+
     }
     @Before("@ContactUs")
     public void cpContactUs() throws InterruptedException {
+        Thread.sleep(2000);
+        main.clicEnSignOut();
+        Thread.sleep(2000);
+    }
+
+    @Before("@WishList")
+    public void cpWishList() throws InterruptedException {
         Thread.sleep(2000);
         main.clicEnSignOut();
         Thread.sleep(2000);
