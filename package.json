@@ -1,0 +1,28 @@
+{
+  "name": "gradle_cucumber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ronal",
+  "license": "ISC",
+  "devDependencies": {
+    "multiple-cucumber-html-reporter": "^1.21.4"
+  },
+  "description": "Automation final Project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronalggm/ProyectoAutomation.git"
+  },
+  "keywords": [
+    "eng"
+  ],
+  "bugs": {
+    "url": "https://github.com/ronalggm/ProyectoAutomation/issues"
+  },
+  "homepage": "https://github.com/ronalggm/ProyectoAutomation#readme"
+}

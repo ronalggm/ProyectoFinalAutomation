@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'io.cucumber:cucumber-java:7.4.1'
+    testImplementation 'io.cucumber:cucumber-junit:7.4.1'
+    implementation group: 'io.cucumber', name: 'cucumber-core', version: '7.4.1'
+    implementation group: 'io.cucumber', name: 'cucumber-testng', version: '7.4.1'
+    implementation group: 'io.cucumber', name: 'cucumber-expressions', version: '16.0.0'
+
+    implementation 'org.seleniumhq.selenium:selenium-java:4.3.0'
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+    testImplementation group: 'org.awaitility', name: 'awaitility', version: '4.2.0'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.6.1'
+
+
+
+
+
+
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+//cucumberReports{
+   // outputDir = file('report')
+    //buildId = '0'
+   // reports = file(json/reportFeature.json)
+//}
