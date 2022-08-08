@@ -17,7 +17,6 @@ public class WishListSteps {
     private String product01WishList = "(//img[@alt='Printed Dress'])[1]";
     private String product02WishList = "(//img[@alt='Printed Summer Dress'])[1]";
     private String QuantityOfProducts = "//td[@class='bold align_center']";
-
     //-----------------productos para wishlist
     private String addWishListProduct01 = "//a[@class='addToWishlist wishlistProd_5']";
     private String addWishListProduct02 = "//a[@class='addToWishlist wishlistProd_4']";
@@ -44,22 +43,19 @@ public class WishListSteps {
         Assert.assertTrue("No se encuentra el producto01 en la wishList", producto01);
         Assert.assertTrue("No se encuentra el producto02 en la wishList", producto02);
     }
-
     @Then("Valido que la cantidad sea la correcta \\({int} productos)")
     public void validoQueLaCantidadSeaLaCorrectaProductos(int cantidad) {
         int resultado = Integer.parseInt(myLists.obtenerTexto(QuantityOfProducts));
         Assert.assertEquals("La cantidad no coincide con la esperada", cantidad, resultado);
     }
-
     @And("Valido que los nombres de los productos sean los correctos")
     public void validoQueLosNombresDeLosProductosSeanLosCorrectos(DataTable table) throws InterruptedException {
         List<Map<String, String>> data = table.asMaps(String.class, String.class);
         for (Map<String, String> element : data) {
-            if (myLists.isDisplayed("//p[contains(text(),'" + element.get("Nombres") + "')]")) {
-                String result = myLists.obtenerTexto("//p[contains(text(),'" + element.get("Nombres") + "')]");
-
+            if (myLists.isDisplayed("//p[contains(text(),'"+element.get("Nombres") + "')]")) {
+                String result = myLists.obtenerTexto("//p[contains(text(),'"+element.get("Nombres")+"')]");
                 myLists.clicEnRemoveButtonList();
-                Assert.assertEquals("El nombre no coincide con el esperado", result, element.get("Nombres"));
+                Assert.assertEquals("El nombre no coincide con el esperado",result,element.get("Nombres"));
                 myLists.switchToAlertFrame();
                 Thread.sleep(4000);
             }

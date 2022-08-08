@@ -27,20 +27,16 @@ public class MainMenu extends BasePage {
     public void navegarAutomationPractice() {
         navegarA("http://automationpractice.com/index.php");
     }
-
     public void clicEnBarraBusqueda() {
         clickElement(campoBusqueda);
     }
-
     public void clicEnBusqueda() throws InterruptedException {
         Thread.sleep(1000);
         clickElement(botonBuscar);
     }
-
     public void escribirNombreDeProducto(String texto) {
         write(campoBusqueda, texto);
     }
-
     public void clicEnSignIn() throws InterruptedException {
         Thread.sleep(400);
         clickElement(signIn);
@@ -50,8 +46,6 @@ public class MainMenu extends BasePage {
         Awaitility.waitAtMost(6, TimeUnit.SECONDS);
         clickElement(locator);
     }
-
-
     public int clicEnAddToCompare(String locator) {
         clickElement(locator);
         int contador = 0;
@@ -59,24 +53,18 @@ public class MainMenu extends BasePage {
     }
     public void switchToProduct(int index) {switchToWindowsElement(index);}
 
-    public void clicEnContactenos() throws InterruptedException {
-        clickElement(contactenos);
+    public void clicEnContactenos() throws InterruptedException {clickElement(contactenos);
         Thread.sleep(3000);
     }
-
     public void verEnLista() {clickElement(viewOnList);}
-
-    public void clicEnCompare() throws InterruptedException {
-        Thread.sleep(10000);
+    public void clicEnCompare() throws InterruptedException {Thread.sleep(10000);
         clickElement(compareButton);
     }
     public void clicEnRemoveButon(String locator){clickElement(locator);}
-
     public void clicEnAccount() {clickElement(myAccount);}
 
     public void clicEnMyWishList(){clickElement(myWishLists);}
-
-public void clicEnSignOut(){
+    public void clicEnSignOut(){
         clickElement(signOut);
 }
 

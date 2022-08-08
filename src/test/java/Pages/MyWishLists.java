@@ -1,6 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.WebDriver;
 
 public class MyWishLists extends BasePage {
     //Locators
@@ -10,11 +9,10 @@ public class MyWishLists extends BasePage {
     public MyWishLists() {
         super(driver);
     }
-
     public void clicEnMiLista() {
         clickElement(myWishListList);
     }
-public void clicEnRemoveButtonList(){
+    public void clicEnRemoveButtonList(){
         clickElement(removeListButton);
 };
 

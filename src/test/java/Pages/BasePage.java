@@ -31,7 +31,6 @@ public class BasePage {
     }
 
     public BasePage(WebDriver driver) {
-
         BasePage.driver = driver;
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
@@ -49,28 +48,19 @@ public class BasePage {
     public static WebElement findByXpath(String locator) {
         return wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
-
     public void clickElement(String locator) {
         if (findByXpath(locator).isDisplayed()) {
             findByXpath(locator).click();
         }
 
     }
-
     public void write(String locator, String textToWrite) {
         findByXpath(locator).clear();
         findByXpath(locator).sendKeys(textToWrite);
     }
-
     public String obtenerTexto(String locator) {
         return findByXpath(locator).getText();
     }
-
-    public void moveToElement(String locator) {
-        action.moveToElement(findByXpath(locator)).perform();
-        action.click();
-    }
-
     public boolean isDisplayed(String locator) {
         try {
             findByXpath(locator).isDisplayed();
@@ -79,38 +69,27 @@ public class BasePage {
         }
         return true;
     }
-
     //----------------------Switches------------------------------------
     public void switchToWindowsElement(int index) {
         driver.switchTo().frame(index);
     }
-
     public void switchToParentFrame() {
         driver.switchTo().parentFrame();
     }
-
     public void switchToAlertFrame() {
         driver.switchTo().alert().accept();
     }
 //-------------------DropDowns----------------------------------
-
     public void selectFromDropDown(String locator, String valueToSelect) {
         Select dropDown = new Select(findByXpath(locator));
         dropDown.selectByValue(valueToSelect);
     }
-
     public void goBack() {
         driver.navigate().back();
     }
-
     public void clickAndHold(String locator) {
         action.click(findByXpath(locator)).perform();
     }
-
-public void scrollUp(){
-
-    JavascriptExecutor jse = (JavascriptExecutor)driver;
-    jse.executeScript("window.scrollBy(0,-250)", "");
-
-    }
+    public void scrollUp(){JavascriptExecutor jse = (JavascriptExecutor)driver;
+    jse.executeScript("window.scrollBy(0,-250)", "");}
 }

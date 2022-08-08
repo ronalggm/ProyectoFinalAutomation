@@ -18,7 +18,7 @@ public class CheckOut extends BasePage {
     //------------------Metodos
     public void clicProceedToCheckout1() {
         clickElement(checkOutButton1);
-    }
+    }//locator para un solo producto
     public void clicProceedToCheckout2() {
         clickElement(checkOutButton2);
     }
