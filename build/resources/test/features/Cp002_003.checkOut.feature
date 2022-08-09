@@ -1,4 +1,4 @@
-Feature: Checkout con Cheque
+Feature: Checkout con Cheque y transferencia
 
   Background:
     Given Ingreso a la pagina web AutomationPractice

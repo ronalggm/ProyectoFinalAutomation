@@ -28,20 +28,18 @@ public class CompareSteps {
         mainMenu.clicEnBusqueda();
         mainMenu.verEnLista();
         int producto1 = mainMenu.clicEnAddToCompare(addcompare01);
-
         Thread.sleep(1000);
         int producto2 = mainMenu.clicEnAddToCompare(addCompare02);
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         elementosAcomparar.add(producto1);
         elementosAcomparar.add(producto2);
-        Thread.sleep(1000);
+        Thread.sleep(4000);
     }
 
     @And("Doy clic en el boton compare")
     public void doyClicEnElBotonCompare() throws InterruptedException {
         mainMenu.clicEnCompare();
     }
-
     //----------------------Validaciones----------------------------
     @Then("Verifico que la cantidad coincide correctamente")
     public void verificoQueLaCantidadCoincideCorrectamente() {

@@ -26,13 +26,13 @@ public class BasePage {
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        wait2 = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait2 = new WebDriverWait(driver, Duration.ofSeconds(8));
         action = new Actions(driver);
     }
 
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
 
     public static void closeBrowser() {
